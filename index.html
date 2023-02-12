@@ -43,7 +43,7 @@
             <section class="hero_sct">
             <div class="container hero_sct_centr"> 
                 <h1 class="hero_sct_title">Effective Solutions for Your Business</h1>
-                <button type="button" class="hero_sct_button">Order Service</button>
+                <button type="button" class="hero_sct_button" data-modal-open>Order Service</button>
             </div>
             </section>
             <section class="feature_sct">
@@ -348,14 +348,14 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> 
     </footer>
 
     <!-- Modal window --> 
 
-    <div class="backdrop" hidden>
+    <div class="backdrop" data-modal>
         <div class="modal">
-            <button class="modal_btn" type="button">
+            <button class="modal_btn" type="button" data-modal-close>
                 <svg class="modal_icon" width="8" height="8">
                     <use href="/images/icons.svg/symbol-defs.svg#close"></use>
                 </svg>
