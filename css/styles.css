@@ -17,6 +17,8 @@
 
     --indent: 24px;
     --indent_bottom: 48px;
+
+    --trns: 250ms ease-in;
 }
 
 h1,h2,h3,h4,h5,h6,p {
@@ -139,12 +141,16 @@ margin-right: auto;
 
 .header_link {
     color: var(--dark-cl);
+    transition: color var(--trns);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header_contact {
     color: var(--txt-cl);
     font-weight: 400;
     font-style: normal;
+    transition: color var(--trns);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header_link:hover,
@@ -205,6 +211,9 @@ margin-right: auto;
     border: none;
     background-color: var(--primary-brand-cl);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+    transition: background-color var(--trns), box-shadow var(--trns);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero_sct_button:hover,
@@ -327,6 +336,9 @@ margin-right: auto;
     height: 40px;
     border-radius: 50%;
     background-color: var(--primary-brand-cl);
+
+    transition: background-color var(--trns);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team_sct_symbol_defs {
@@ -366,6 +378,8 @@ margin-right: auto;
     border-radius: 4px;
     fill: var(--subtle-txt-cl);
     
+    transition: border var(--trns), fill var(--trns);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers_sct_client:hover,
@@ -428,6 +442,9 @@ margin-right: auto;
     height: 40px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
+
+    transition: background var(--trns);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer_symbol_defs {
@@ -463,6 +480,9 @@ margin-right: auto;
     border: 1px solid var(--accent-cl);
     border-radius: 4px;
     background-color: var(--light-cl);
+
+    transition: color var(--trns), background-color var(--trns), box-shadow var(--trns);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }  
 
 .main_button:hover,
@@ -481,12 +501,51 @@ margin-right: auto;
 
 .main_sct_item_work {
     flex-basis: calc((100% - 2 * 24px) / 3);
+    transition: box-shadow var(--trns);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main_sct_item_work:hover {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     cursor: pointer;
 }
+
+.port_wrapper { 
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio_link {
+    display: block;
+    position: relative;
+}
+
+.portfolio_link:hover{
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio_link:hover .overlay,
+.portfolio_link:focus .overlay {
+    transform: translate(0, 0);
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    transform: translate(0, 100%);
+    transition: transform var(--trns) linear;
+    background-color: var(--primary-brand-cl);
+    font-size: 20px;
+    color: var(--white-cl);
+    padding-top: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
 .main_sct_item_info { 
     padding: 32px 0 32px 16px;
     border: 1px solid var(--accent-cl);
@@ -529,18 +588,39 @@ margin-right: auto;
     bottom: 0;
 
     background-color: rgba(46, 47, 66, 0.4);
+
+    transition: opacity var(--trns), visibility var(--trns);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
+    transition-delay: var(--trns);
 }
 
 .modal{
     position: absolute;
-    top: calc(50% - 275px);
-    left: calc(50% - 225px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     width: 408px;
     min-height: 576px;
     border-radius: 4px;
     background-color: var(--light-cl);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+
+    transition: transform 150ms ease, opacity 150ms ease;
+    transition-delay: 400ms;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -70%);
+    opacity: 0;
+    transition-delay: 0s;
 }
 
 .modal_btn{
