@@ -51,9 +51,12 @@ body {
 }
 
 .current {
-    color: var(--dark-cl);
+   color: var(--pressed-state-cl);
 }
 
+.color_heder {
+    color: var(--dark-cl);
+}
 .current::after {
     content: '';
     position: absolute;
@@ -145,8 +148,6 @@ margin-right: auto;
 .header_link {
     transition: color var(--trns);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    
-    color: var(--dark-cl);
 }
 
 .header_contact {
