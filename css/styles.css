@@ -50,13 +50,7 @@ body {
     letter-spacing: 0.02em;
 }
 
-.current {
-   color: var(--pressed-state-cl);
-}
 
-.color_heder {
-    color: var(--dark-cl);
-}
 .current::after {
     content: '';
     position: absolute;
@@ -143,11 +137,12 @@ margin-right: auto;
     font-size: 16px;
     line-height: 1.3;
     letter-spacing: 0.02em;
+
+    color: var(--dark-cl);
 }
 
 .header_link {
     transition: color var(--trns);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header_contact {
@@ -155,7 +150,6 @@ margin-right: auto;
     font-weight: 400;
     font-style: normal;
     transition: color var(--trns);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header_link:hover,
@@ -165,6 +159,9 @@ margin-right: auto;
   color: var(--pressed-state-cl);
 }
 
+.current {
+    color: var(--pressed-state-cl);
+ }
 /* Main index */
 
 .hero_sct{
@@ -218,7 +215,6 @@ margin-right: auto;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
     transition: background-color var(--trns), box-shadow var(--trns);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero_sct_button:hover,
@@ -343,7 +339,6 @@ margin-right: auto;
     background-color: var(--primary-brand-cl);
 
     transition: background-color var(--trns);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team_sct_symbol_defs {
@@ -384,7 +379,6 @@ margin-right: auto;
     fill: var(--subtle-txt-cl);
     
     transition: border var(--trns), fill var(--trns);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers_sct_client:hover,
@@ -449,7 +443,6 @@ margin-right: auto;
     background: rgba(255, 255, 255, 0.1);
 
     transition: background var(--trns);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer_symbol_defs {
@@ -487,7 +480,6 @@ margin-right: auto;
     background-color: var(--light-cl);
 
     transition: color var(--trns), background-color var(--trns), box-shadow var(--trns);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }  
 
 .main_button:hover,
@@ -507,7 +499,6 @@ margin-right: auto;
 .main_sct_item_work {
     flex-basis: calc((100% - 2 * 24px) / 3);
     transition: box-shadow var(--trns);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main_sct_item_work:hover {
@@ -595,7 +586,6 @@ margin-right: auto;
     background-color: rgba(46, 47, 66, 0.4);
 
     transition: opacity var(--trns), visibility var(--trns);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
